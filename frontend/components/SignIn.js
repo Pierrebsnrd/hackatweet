@@ -5,11 +5,13 @@ import Image from "next/image";
 import styles from "../styles/Login.module.css";
 import {login, logout} from '../reducers/user'
 import {useDispatch, useSelector} from 'react-redux'
+import Link from 'next/link'
 
 function SignIn() {
   const { createRoot } = ReactDOM;
   const { useState, useEffect } = React;
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [signInUsername, setSignInUsername] = useState("");
@@ -42,6 +44,8 @@ function SignIn() {
           setIsModalOpen(false);
         }
       });
+        <Link href="/accueil"></Link>
+      
   };
 
   return (

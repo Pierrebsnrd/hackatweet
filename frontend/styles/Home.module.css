@@ -27,3 +27,28 @@
   height: 100%;
   margin-right: 600px;
 }
+
+.accueil {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gauche {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 33%
+}
+
+.utilisateur {
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+}
