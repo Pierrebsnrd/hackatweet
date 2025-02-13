@@ -32,7 +32,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  background-color: black;
 }
 
 .gauche {
@@ -40,7 +40,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33%
+  width: 25%;
+  border : 1px solid white
 }
 
 .utilisateur {
@@ -51,4 +52,12 @@
 .content{
   display: flex;
   flex-direction: row;
+}
+
+.firstname {
+  color: white;
+}
+
+.username {
+  color: gray;
 }
