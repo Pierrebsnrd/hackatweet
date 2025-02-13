@@ -3,10 +3,14 @@ import ReactDOM from "react-dom";
 import { Modal, Button } from "antd";
 import Image from "next/image";
 import styles from "../styles/Login.module.css";
+import {login, logout} from '../reducers/user'
+import {useDispatch, useSelector} from 'react-redux'
 
 function SignUp() {
   const { createRoot } = ReactDOM;
-  const { useState } = React;
+  const { useState, useEffect } = React;
+  const dispatch = useDispatch();
+  //const user = 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [signUpFirstname, setSignUpFirstname] = useState("")
