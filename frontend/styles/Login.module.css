@@ -1,0 +1,15 @@
+.login {
+    height: 100%;
+}
+
+.modale {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+}

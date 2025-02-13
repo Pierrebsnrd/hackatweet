@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -21,11 +21,9 @@
   text-decoration: underline;
 }
 
-.zolidessin {
-  width: 40%;
-}
+
 
 .login{
-  width: 60%;
   height: 100%;
+  margin-right: 600px;
 }
