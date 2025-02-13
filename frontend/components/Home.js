@@ -13,7 +13,9 @@ function Home() {
     return (
       <div className={styles.accueil}>
         <div className={styles.gauche}>
-        <Image src="/gobelin.jpg" alt="gobelin" width={100} height={100} />
+          <div className={styles.imageHautGauche}>
+            <Image src="/gobelin.jpg" alt="gobelin" width={100} height={100} />
+          </div>
           <div className={styles.utilisateur}>
             <div className={styles.content}>
               <Image
@@ -27,7 +29,7 @@ function Home() {
                 <p className={styles.username}>username</p>
               </div>
             </div>
-            <button>Logout</button>
+            <button className={styles.boutonGauche}>Logout</button>
           </div>
         </div>
         <div className={styles.middle}>
