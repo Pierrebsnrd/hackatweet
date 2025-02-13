@@ -1,7 +1,8 @@
 .lasttweets {
     display: flex;
     flex-direction: column;
-    border: 1px solid white
+    border: 1px solid white;
+    width: 100%;
 }
 
 .utilisateur {
@@ -11,10 +12,12 @@
 
 .firstname {
     color: white;
+    margin: 0 5px;
 }
 
 .post {
     color: gray;
+    margin: 0 5px;
 }
 
 .msg {
