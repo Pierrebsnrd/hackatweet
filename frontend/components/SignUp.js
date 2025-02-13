@@ -24,7 +24,7 @@ function SignUp() {
       <Button type="primary" onClick={showModal}>
         Sign Up
       </Button>
-      <Modal open={isModalOpen} onOk={handleOk} okText='SignUp' onCancel={handleCancel} >
+      <Modal open={isModalOpen} onOk={handleOk} okText='SignUp' onCancel={handleCancel}>
           <Image src="/gobelin.jpg" alt="gobelin" width={100} height={100} />
         <div className={styles.popup}>
           <h2>Create your Hackatweet account</h2>
