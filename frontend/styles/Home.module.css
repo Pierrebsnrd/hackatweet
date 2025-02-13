@@ -1,8 +1,6 @@
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 100vh;
   width: 100vw;
 }
@@ -32,7 +30,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
 }
 
 .gauche {
@@ -40,7 +38,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33%
+  width: 25%;
+}
+.middle{
+  background-color: aquamarine;
+
 }
 
 .utilisateur {
@@ -51,4 +53,9 @@
 .content{
   display: flex;
   flex-direction: row;
+}
+.boutonGauche{
+  display : flex;
+  width : 200px;
+  justify-content: center
 }
