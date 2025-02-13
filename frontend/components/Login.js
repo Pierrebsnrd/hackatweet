@@ -1,7 +1,7 @@
 import React from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-import Image from "next/Image";
+import Image from "next/image";
 import styles from '../styles/Login.module.css'
 
 function Login() {
