@@ -8,6 +8,7 @@ import Trends from "./Trends";
 
 function Home() {
   const user = useSelector((state) => state.user.value);
+  console.log(user)
 
   if (user.token) {
     return (
@@ -25,8 +26,8 @@ function Home() {
                 height={100}
               />
               <div>
-                <p className={styles.firstname}>firstname</p>
-                <p className={styles.username}>username</p>
+                <p className={styles.firstname}>{user.firstname}</p>
+                <p className={styles.username}>{user.username}</p>
               </div>
             </div>
             <button className={styles.boutonGauche}>Logout</button>

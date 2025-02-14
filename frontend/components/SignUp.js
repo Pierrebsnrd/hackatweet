@@ -32,8 +32,10 @@ function SignUp() {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log('blabla', data)
           if (data.result) {
-            dispatch(login({ firstname: signUpFirstname, username: signUpUsername, password: signUpPassword, token: data.token }));
+
+            dispatch(login({ firstname: signUpFirstname, username: signUpUsername, password: signUpPassword, token: data.token,id: data.id }));
             setSignUpFirstname("");
             setSignUpUsername("");
             setSignUpPassword("");
