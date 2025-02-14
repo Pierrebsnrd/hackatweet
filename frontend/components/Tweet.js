@@ -17,6 +17,7 @@ function Tweet() {
         message: message,
         user: user.id
       }),
+      
     })
       .then((response) => response.json())
       .then((data) => {
