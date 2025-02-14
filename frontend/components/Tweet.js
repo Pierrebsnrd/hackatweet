@@ -23,7 +23,7 @@ function Tweet() {
       .then((data) => {
 		  console.log(data)
         if (data.result) {
-          dispatch(postTweet({message: data.message, date: data.date, isPosted: true}));
+          dispatch(postTweet({message: data.messages.message, username: user.username, firstname: user.firstname, date: data.messages.date, isPosted: true}));
         }
       });
   };
