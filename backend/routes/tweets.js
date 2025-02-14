@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
       const newTweet = new Tweet({
         message: req.body.message,
         user : req.body.user,
-        //date : req.body.date,
+        date : req.body.date
       });
 
       newTweet.save().then(newDoc => {

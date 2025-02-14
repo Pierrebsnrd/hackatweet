@@ -16,6 +16,8 @@ function SignIn() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [signInUsername, setSignInUsername] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+  const [id, setId] = useState("");
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -33,14 +35,17 @@ function SignIn() {
       body: JSON.stringify({
         username: signInUsername,
         password: signInPassword,
+        id: id,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         if (data.result) {
-          dispatch(login({ username: signInUsername, token: data.token }));
+          dispatch(login({ username: signInUsername, token: data.token, id:data.id }));
           setSignInUsername("");
           setSignInPassword("");
+          setId("");
           setIsModalOpen(false);
         }
       });
