@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Tweet = require('../models/tweets');
 const {checkBody} = require('../modules/checkBody');
+const User = require('../models/users');
 
 
 /* GET users listing. */
@@ -16,17 +17,35 @@ router.post('/', (req, res) => {
     return;
   }
 
+  User
+    .findById(req.body.user)
+    .then((user) => {
+      if (!user) {
+        res.json({ result: false, error: 'User not found' });
+        return;
+      }
+
       const newTweet = new Tweet({
         message: req.body.message,
-        user : req.body.user,
-        date : req.body.date
+        user : user._id,
+       // date : req.body.date
       });
 
-      newTweet.save().then(newDoc => {
-        Tweet.findOne({message: req.body.message})
-        .populate('user').then(data => {
-          res.json({result: true, messages : data});
-        })
+      newTweet
+        .save()
+        .then(() => {
+          const tweet = {
+            firstname: user.firstname,
+            username: user.username,
+            message: newTweet.message,
+          }
+
+          res.json({result: true, message : tweet});
       });
+    })
+
+      
+
+      
 }) 
 module.exports = router;

@@ -16,14 +16,13 @@ function Tweet() {
       body: JSON.stringify({
         message: message,
         user: user.id
-        /* date: Date.now, */
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-		console.log(data)
+		  console.log(data)
         if (data.result) {
-          dispatch(postTweet({ username: user.username, firstname: user.firstname, message: data.message, date: data.date}));
+          dispatch(postTweet({message: data.message, date: data.date, isPosted: true}));
         }
       });
   };
