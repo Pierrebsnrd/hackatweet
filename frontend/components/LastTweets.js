@@ -9,6 +9,8 @@ function LastTweets() {
   const tweet = useSelector((state) => state.tweet.value);
   console.log(tweet);
 
+  
+
   if (tweet.isPosted) {
     return (
       <div className={styles.lasttweets}>

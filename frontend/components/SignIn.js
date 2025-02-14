@@ -16,6 +16,8 @@ function SignIn() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [signInUsername, setSignInUsername] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+  //const [signInFirstname, setSignInFirstname] = useState("");
+
   const [id, setId] = useState("");
 
   const showModal = () => {
@@ -42,9 +44,10 @@ function SignIn() {
       .then((data) => {
         console.log(data)
         if (data.result) {
-          dispatch(login({ username: signInUsername, token: data.token, id:data.id }));
+          dispatch(login({ username: signInUsername, token: data.token, id:data.id, firstname:data.firstname }));
           setSignInUsername("");
           setSignInPassword("");
+          //setSignInFirstname("");
           setId("");
           setIsModalOpen(false);
         }
