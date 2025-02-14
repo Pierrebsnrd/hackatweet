@@ -1,0 +1,29 @@
+.lasttweets {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    width: 100%;
+}
+
+.utilisateur {
+    display: flex;
+    align-items: center;
+}
+
+.firstname {
+    color: white;
+    margin: 0 5px;
+}
+
+.post {
+    color: gray;
+    margin: 0 5px;
+}
+
+.msg {
+    color: white;
+}
+
+.icone {
+    color: white;
+}

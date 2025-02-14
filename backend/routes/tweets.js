@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Tweet = require('../models/tweets');
 const {checkBody} = require('../modules/checkBody');
+const User = require('../models/users');
 
 
 /* GET users listing. */
@@ -15,36 +16,36 @@ router.post('/', (req, res) => {
     res.json({ result: false, error: 'Missing or empty fields' });
     return;
   }
+
+  User
+    .findById(req.body.user)
+    .then((user) => {
+      if (!user) {
+        res.json({ result: false, error: 'User not found' });
+        return;
+      }
+
       const newTweet = new Tweet({
         message: req.body.message,
-        //user : req.body.user,
-        //date : req.body.date,
+        user : user._id,
+       // date : req.body.date
       });
 
-      newTweet.save().then(newDoc => {
-        res.json({result: true, messages : newDoc});
+      newTweet
+        .save()
+        .then(() => {
+          const tweet = {
+            firstname: user.firstname,
+            username: user.username,
+            message: newTweet.message,
+          }
+
+          res.json({result: true, message : tweet});
       });
-    Tweet.findOne({message:req.body.message})
-    .populate('users')
-    .then(data => {
-      console.log(data)
     })
-});
 
-router.delete('/', (req, res) => {
-  if (!checkBody(req.body, ['message'])){
-    res.json({ result: false, error: 'Missing or empty fields'});
-    return;
-  }
-  Tweet.deleteOne({_id:req.body.user}).then(()=> {
-     Tweet.find().then(data => {
-        console.log(data)
-      });
-    });
+      
 
-  
-})
-
+      
+}) 
 module.exports = router;
-
-

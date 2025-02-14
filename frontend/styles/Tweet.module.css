@@ -1,29 +1,30 @@
 .ComposantTweet{
     display: flex;
-    width : 300%;
-    background-color: blue;
+    width : 100%;
     flex-direction: column;
-
 }
 
 .titre{
     display: flex;
     justify-content: left;
     align-items: center;
+    color: white;
 }
 .konecrit{
     width : 80%;
     display : flex;
     justify-content: center;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 .conteneurCompteETBouton{
     display: flex;
     justify-content: right;
+    color: white;
 }
 
 .boutonTweet{
     width : 60px;
+    color: black;
 }

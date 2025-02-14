@@ -25,8 +25,8 @@ function Home() {
                 height={100}
               />
               <div>
-                <p>firstname</p>
-                <p>username</p>
+                <p className={styles.firstname}>firstname</p>
+                <p className={styles.username}>username</p>
               </div>
             </div>
             <button className={styles.boutonGauche}>Logout</button>
@@ -34,7 +34,7 @@ function Home() {
         </div>
         <div className={styles.middle}>
           <Tweet className={styles.tweet} />
-          <LastTweets className={styles.tweet} />
+          <LastTweets className={styles.lasttweet} />
         </div>
         <Trends />
       </div>
