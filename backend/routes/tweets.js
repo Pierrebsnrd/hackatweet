@@ -18,13 +18,15 @@ router.post('/', (req, res) => {
 
       const newTweet = new Tweet({
         message: req.body.message,
-        user : req.body.user
+        user : req.body.user,
         //date : req.body.date,
       });
 
       newTweet.save().then(newDoc => {
-        res.json({result: true, messages : newDoc});
+        Tweet.findOne({message: req.body.message})
+        .populate('user').then(data => {
+          res.json({result: true, messages : data});
+        })
       });
 }) 
-
 module.exports = router;
