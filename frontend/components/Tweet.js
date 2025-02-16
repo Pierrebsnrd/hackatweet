@@ -15,7 +15,8 @@ function Tweet() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: message,
-        user: user.id
+        user: user.id,
+        username: user.username
       }),
       
     })
@@ -23,7 +24,7 @@ function Tweet() {
       .then((data) => {
 		  console.log(data)
         if (data.result) {
-          dispatch(postTweet({message: data.messages.message, username: user.username, firstname: user.firstname, date: data.messages.date, isPosted: true}));
+          dispatch(postTweet({message: data.message.message, username: user.username, firstname: user.firstname, date: data.message.date, isPosted: true}));
         }
       });
   };

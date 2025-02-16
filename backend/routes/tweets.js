@@ -27,6 +27,8 @@ router.post("/", (req, res) => {
     const newTweet = new Tweet({
       message: req.body.message,
       user: user._id,
+      firstname: user.firstname,
+      username: user.username,
       // date : req.body.date
     });
 
@@ -37,7 +39,7 @@ router.post("/", (req, res) => {
         message: newTweet.message,
       };
 
-      res.json({ result: true, message: tweet });
+      res.json({ result: true, message: tweet, username: user.username, firstname: user.firstname });
     });
   });
 });
